@@ -68,15 +68,26 @@ def send_welcome(message):
     btn_support_chat = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ✨🌸", url="https://t.me/SxNoii")
     btn_support_channel = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ✨🌷", url="https://t.me/ToxicTechz")
     btn_owner = types.InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ 🖤🥀", url="tg://user?id=8233966309")
-    btn_do_pal = types.InlineKeyboardButton("ᴅᴏ ᴘᴀʟ ❤️‍🩹🕊️", url="https://t.me/Do_Pal0"
- 
+    btn_do_pal = types.InlineKeyboardButton("ᴅᴏ ᴘᴀʟ ❤️‍🩹🕊️", url="https://t.me/Do_Pal0")
+
     keyboard.add(btn_search)
     keyboard.add(btn_support_chat, btn_support_channel, btn_owner, btn_do_pal)
 
     photo_url = "https://ar-hosting.pages.dev/1759776521409.jpg"  # apna photo link daalna
-    bot.send_photo(message.chat.id, photo_url,
-                   caption="I'ᴍ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ʙᴏᴛ. \n\n ᴍᴀᴅᴇ ʙʏ [ᴛᴏxɪᴄ ᴅᴇᴠ](http://t.me/szxns) ᴡɪᴛʜ [❤️](http://t.me/yoo_alexa)",
-                   reply_markup=keyboard, parse_mode="Markdown")
+
+    caption = (
+        "I'ᴍ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ʙᴏᴛ.\n\n"
+        "ᴍᴀᴅᴇ ʙʏ <a href='http://t.me/szxns'>ᴛᴏxɪᴄ ᴅᴇᴠ</a> ᴡɪᴛʜ "
+        "<a href='http://t.me/yoo_alexa'>❤️</a>"
+    )
+
+    bot.send_photo(
+        message.chat.id,
+        photo_url,
+        caption=caption,
+        reply_markup=keyboard,
+        parse_mode="HTML"
+    )
 
 
 @bot.callback_query_handler(func=lambda call: True)
