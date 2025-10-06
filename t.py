@@ -76,8 +76,8 @@ def send_welcome(message):
     if not check_joined(user_id):
         join_keyboard = types.InlineKeyboardMarkup()
         join_keyboard.add(
-            types.InlineKeyboardButton("📢 Join Channel", url=f"https://t.me/{channel_username.replace('@','')}"),
-            types.InlineKeyboardButton("✅ Joined", callback_data="joined_check")
+            types.InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ🖤✨", url=f"https://t.me/{channel_username.replace('@','')}"),
+            types.InlineKeyboardButton("ᴊᴏɪɴᴇᴅ ✨", callback_data="joined_check")
         )
         bot.send_message(message.chat.id, "⚠️ You must join our channel to use this bot!\n\nJoin the channel and then click '✅ Joined'.", reply_markup=join_keyboard)
         return
@@ -111,10 +111,10 @@ def callback_query(call):
                          "└ +911234567890")
     elif call.data == "joined_check":
         if check_joined(call.from_user.id):
-            bot.answer_callback_query(call.id, "✅ You joined successfully!")
+            bot.answer_callback_query(call.id, "Baby You joined successfully Toxic Community 🌸🌷")
             send_welcome(call.message)
         else:
-            bot.answer_callback_query(call.id, "❌ You haven't joined the channel yet!", show_alert=True)
+            bot.answer_callback_query(call.id, "You haven't joined the channel yet! ❤️‍🩹🌷", show_alert=True)
 
     elif call.data.startswith("/page "):
         query_id, page_id = call.data.split(" ")[1:]
@@ -134,8 +134,8 @@ def echo_message(message):
     if not check_joined(user_id):
         join_keyboard = types.InlineKeyboardMarkup()
         join_keyboard.add(
-            types.InlineKeyboardButton("📢 Join Channel", url=f"https://t.me/{channel_username.replace('@','')}"),
-            types.InlineKeyboardButton("✅ Joined", callback_data="joined_check")
+            types.InlineKeyboardButton("ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ ✨🌸", url=f"https://t.me/{channel_username.replace('@','')}"),
+            types.InlineKeyboardButton("ᴊᴏɪɴᴇᴅ ✨", callback_data="joined_check")
         )
         bot.send_message(message.chat.id, "⚠️ You must join our channel to use this bot!\n\nJoin the channel and then click '✅ Joined'.", reply_markup=join_keyboard)
         return
