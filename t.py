@@ -7,8 +7,8 @@ except ModuleNotFoundError:
     input("There is no necessary library. Complete the command line command: PIP Install Pytelegrambotapi")
 
 url = "https://leakosintapi.com/"
-bot_token = "" #Insert here the token received from @botfather
-api_token = ""  #Insert here the token received from Leakosint
+bot_token = "7891280232:AAEQR4JeKStkMzHKvr_cYt6aIZHvtsxdnLQ" #Insert here the token received from @botfather
+api_token = "8233966309:934u3TJw"  #Insert here the token received from Leakosint
 lang = "en"
 limit = 300
 
