@@ -67,12 +67,12 @@ def send_welcome(message):
     btn_search = types.InlineKeyboardButton("📱 Search Data", callback_data="search_data")
     btn_support_chat = types.InlineKeyboardButton("💬 Support Chat", url="https://t.me/YourSupportChat")
     btn_support_channel = types.InlineKeyboardButton("📢 Support Channel", url="https://t.me/YourChannel")
-    btn_owner = types.InlineKeyboardButton("👑 Owner", url="tg://user?id=1234567890")
+    btn_owner = types.InlineKeyboardButton("👑 Owner", url="tg://user?id=8233966309")
 
     keyboard.add(btn_search)
     keyboard.add(btn_support_chat, btn_support_channel, btn_owner)
 
-    photo_url = "https://example.com/photo.jpg"  # apna photo link daalna
+    photo_url = "https://ar-hosting.pages.dev/1759776521409.jpg"  # apna photo link daalna
     bot.send_photo(message.chat.id, photo_url,
                    caption="Hello! I am a telegram-bot that can search for databases.",
                    reply_markup=keyboard, parse_mode="Markdown")
