@@ -30,7 +30,7 @@ def generate_report(query, query_id):
     for database_name in response["List"].keys():
         text = [f"<b>{database_name}</b>",""]
         text.append(response["List"][database_name]["InfoLeak"]+"\n")
-        if database_name!="No results found":
+        if database_name!="No results found Toxic Baby":
             for report_data in response["List"][database_name]["Data"]:
                 for column_name in report_data.keys():
                     text.append(f"<b>{column_name}</b>:  {report_data[column_name]}")
