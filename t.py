@@ -65,15 +65,15 @@ def send_welcome(message):
     keyboard = types.InlineKeyboardMarkup(row_width=2)
 
     btn_search = types.InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ 📱", callback_data="search_data")
-    btn_support_chat = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ✨🌸", url="https://t.me/SxNoii")
-    btn_support_channel = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ✨🌷", url="https://t.me/ToxicTechz")
+    btn_support_chat = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ", url="https://t.me/SxNoii")
+    btn_support_channel = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ", url="https://t.me/ToxicTechz")
     btn_owner = types.InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ 🖤🥀", url="tg://user?id=8233966309")
     btn_do_pal = types.InlineKeyboardButton("ᴅᴏ ᴘᴀʟ ❤️‍🩹🕊️", url="https://t.me/Do_Pal0")
 
     keyboard.add(btn_search)
-    keyboard.add(btn_support_chat, btn_support_channel, btn_owner, btn_do_pal)
+    keyboard.add(btn_support_chat, btn_support_channel, btn_do_pal, btn_owner)
 
-    photo_url = "https://ar-hosting.pages.dev/1759776521409.jpg"  # apna photo link daalna
+    photo_url = "https://ar-hosting.pages.dev/1759778199993.jpg"  # apna photo link daalna
 
     caption = (
         "I'ᴍ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ʙᴏᴛ.\n\n"
@@ -96,7 +96,7 @@ def callback_query(call):
         bot.answer_callback_query(call.id)
         bot.send_message(call.message.chat.id,
                          "You can look for the following data:\n\n"
-                         "📱Search by phone number\n Example only send Mobile Number With Country Code"
+                         "📱Search by phone number\n Example only send Mobile Number With Country Code.\n\n"
                          "├ +79002206090\n"
                          "├ +17900220609\n"
                          "└ +911234567890")
