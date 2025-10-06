@@ -75,7 +75,7 @@ def send_welcome(message):
 
     photo_url = "https://ar-hosting.pages.dev/1759776521409.jpg"  # apna photo link daalna
     bot.send_photo(message.chat.id, photo_url,
-                   caption="Hello! I am a telegram-bot that can search for databases.",
+                   caption="I'ᴍ ᴍᴏʙɪʟᴇ ɴᴜᴍʙᴇʀ ᴛᴏ ᴀʟʟ ɪɴғᴏʀᴍᴀᴛɪᴏɴ ʙᴏᴛ. \n\n ᴍᴀᴅᴇ ʙʏ [ᴛᴏxɪᴄ ᴅᴇᴠ](http://t.me/szxns) ᴡɪᴛʜ [❤️](http://t.me/yoo_alexa)",
                    reply_markup=keyboard, parse_mode="Markdown")
 
 
@@ -85,7 +85,7 @@ def callback_query(call):
         bot.answer_callback_query(call.id)
         bot.send_message(call.message.chat.id,
                          "You can look for the following data:\n\n"
-                         "📱Search by phone number\n"
+                         "📱Search by phone number\n Example only send Mobile Number With Country Code"
                          "├ +79002206090\n"
                          "├ +17900220609\n"
                          "└ +911234567890")
