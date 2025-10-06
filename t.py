@@ -1,4 +1,6 @@
 import requests
+import telebot
+from telebot import types
 from random import randint
 try:
     import telebot
@@ -57,10 +59,36 @@ def create_inline_keyboard(query_id, page_id, count_page):
     return markup
 
 bot = telebot.TeleBot(bot_token)
+
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
-    bot.reply_to(message, "Hello! I am a telegram-boot that can search for databases.", parse_mode="Markdown")
+    keyboard = types.InlineKeyboardMarkup(row_width=2)
 
+    btn_search = types.InlineKeyboardButton("📱 Search Data", callback_data="search_data")
+    btn_support_chat = types.InlineKeyboardButton("💬 Support Chat", url="https://t.me/YourSupportChat")
+    btn_support_channel = types.InlineKeyboardButton("📢 Support Channel", url="https://t.me/YourChannel")
+    btn_owner = types.InlineKeyboardButton("👑 Owner", url="tg://user?id=1234567890")
+
+    keyboard.add(btn_search)
+    keyboard.add(btn_support_chat, btn_support_channel, btn_owner)
+
+    photo_url = "https://example.com/photo.jpg"  # apna photo link daalna
+    bot.send_photo(message.chat.id, photo_url,
+                   caption="Hello! I am a telegram-bot that can search for databases.",
+                   reply_markup=keyboard, parse_mode="Markdown")
+
+
+@bot.callback_query_handler(func=lambda call: True)
+def callback_query(call):
+    if call.data == "search_data":
+        bot.answer_callback_query(call.id)
+        bot.send_message(call.message.chat.id,
+                         "You can look for the following data:\n\n"
+                         "📱Search by phone number\n"
+                         "├ +79002206090\n"
+                         "├ +17900220609\n"
+                         "└ +911234567890")
+        
 @bot.message_handler(func=lambda message: True)
 def echo_message(message):
     user_id = message.from_user.id
