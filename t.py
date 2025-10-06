@@ -64,13 +64,14 @@ bot = telebot.TeleBot(bot_token)
 def send_welcome(message):
     keyboard = types.InlineKeyboardMarkup(row_width=2)
 
-    btn_search = types.InlineKeyboardButton("📱 Search Data", callback_data="search_data")
-    btn_support_chat = types.InlineKeyboardButton("💬 Support Chat", url="https://t.me/YourSupportChat")
-    btn_support_channel = types.InlineKeyboardButton("📢 Support Channel", url="https://t.me/YourChannel")
-    btn_owner = types.InlineKeyboardButton("👑 Owner", url="tg://user?id=8233966309")
-
+    btn_search = types.InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ 📱", callback_data="search_data")
+    btn_support_chat = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ✨🌸", url="https://t.me/SxNoii")
+    btn_support_channel = types.InlineKeyboardButton("sᴜᴘᴘᴏʀᴛ ᴄʜᴀɴɴᴇʟ✨🌷", url="https://t.me/ToxicTechz")
+    btn_owner = types.InlineKeyboardButton("ᴅᴇᴠʟᴏᴘᴇʀ 🖤🥀", url="tg://user?id=8233966309")
+    btn_do_pal = types.InlineKeyboardButton("ᴅᴏ ᴘᴀʟ ❤️‍🩹🕊️", url="https://t.me/Do_Pal0"
+ 
     keyboard.add(btn_search)
-    keyboard.add(btn_support_chat, btn_support_channel, btn_owner)
+    keyboard.add(btn_support_chat, btn_support_channel, btn_owner, btn_do_pal)
 
     photo_url = "https://ar-hosting.pages.dev/1759776521409.jpg"  # apna photo link daalna
     bot.send_photo(message.chat.id, photo_url,
